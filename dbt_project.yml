@@ -34,7 +34,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 
 models:
   supermarket:
+    +persist_docs:
+      relation: true
+      columns: true
     staging:
       +materialized: view
     marts:
-      +materialized: table  
+      +materialized: table
+
